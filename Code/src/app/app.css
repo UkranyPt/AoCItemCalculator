@@ -1,0 +1,13 @@
+.sidebar {
+    display: inline-block;
+}
+
+.main {
+    display: inline-block;
+    min-height: 400px;
+    padding-left: 3em;
+}
+
+.footer {
+    width: 100%;
+}
