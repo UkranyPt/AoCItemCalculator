@@ -1,4 +1,11 @@
 
-        <nav class="sidebar-item" (click)="goToList()">Item List</nav>
-
-        <nav class="sidebar-item" (click)="goToSearch()">Item Search</nav>
+<nav>
+    <ul>
+        <li class="sidebar-item" (click)="goToList()">Item List</li>
+        <li class="sidebar-item" (click)="goToSearch()">Item Search</li>
+        <li class="sidebar-item" (click)="goToBuiler()">Build Planner</li>
+        <hr>
+        <li class="sidebar-item" (click)="reloadDatabase()"><span>@if(this.nextRefreshTimestamp <= 0){ Sync with API } @else { Please wait {{this.nextRefreshTimestamp}}s}</span></li>
+        <li class="sidebar-item" (click)="debugData()">Debug Info</li>
+    </ul>
+</nav>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DataService } from '../services/data-service';
 
 @Component({
   selector: 'app-list-item-component',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './list-item-component.css'
 })
 export class ListItemComponent {
+  private service = inject(DataService);
+  data = this.service.currentDatabase;
+
+  buildImgUrl(displayIcon: string){
+    let end = displayIcon.lastIndexOf('.');
+    return "https://cdn.ashescodex.com" + displayIcon.substring(0,end).replace('/Game/','/') + '_64.webp';
+  }
 
 }

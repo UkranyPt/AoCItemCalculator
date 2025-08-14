@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar-component/sidebar-component';
+import { DataService } from './services/data-service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,9 @@ import { SidebarComponent } from './sidebar-component/sidebar-component';
 })
 export class App {
   protected readonly title = signal('AoCItemCalculator');
+  private data = inject(DataService);
+
+  ngOnInit() {
+    this.data.initializeData();
+  }
 }

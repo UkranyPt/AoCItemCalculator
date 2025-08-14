@@ -1,1 +1,12 @@
-<p>search-item-component works!</p>
+<section class="search">
+  <label for="searchBox">Start typing and it will fetch all matching results!</label>
+  <input type="search" name="searchBox" id="searchBox" placeholder="Search here" (keyup)="fetchMatchingResults($event)"/>
+</section>
+
+<section class="search-results">
+    <ul>
+    @for (item of this.resultsData(); track item.guid) {
+        <div class="list-item"><img class="item-image" src="{{buildImgUrl(item.displayIcon)}}" /><label class="item-name">{{ item.itemName }}</label><label class="item-slots">{{item.equipSlots}}</label></div>
+    }
+    </ul>
+</section>

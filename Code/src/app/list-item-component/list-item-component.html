@@ -1,1 +1,12 @@
-<p>list-item-component works!</p>
+
+<ul>
+@for (item of this.data(); track item.guid) {
+    <div class="list-item">
+        <img class="item-image" src="{{buildImgUrl(item.displayIcon)}}" />
+        <label class="item-name">{{ item.itemName }}</label>
+        <label class="item-slots">{{item.equipSlots}}</label>
+    </div>
+} @empty {
+    <li><p>There are no items.</p></li>
+}
+</ul>
